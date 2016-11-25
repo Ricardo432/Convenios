@@ -54,9 +54,9 @@ while ($line = mysql_fetch_array($result, MYSQL_NUM)) {
   	echo "<td></td>";
   }
   	echo "<td>$line[13]</td>";
-    echo "<td><input type='button' value='ODI' name='$line[0]' onclick = \"location='/conv/accionTec.php?id=$line[0]'\"/></td>";
-    echo "<td><input type='button' value='CNV' name='$line[0]' onclick = \"location='/conv/prueba2.php?id=$line[0]'\"/></td>";
-    echo "<td><input type='button' value='Cerrar ODI' name='$line[0]' onclick = \"location='/conv/cerrar.php?id=$line[0]'\"/></td>";
+    echo "<td><input type='button' value='ODI' name='$line[0]' onclick = \"location='/odi/accionTec.php?id=$line[0]'\"/></td>";
+    echo "<td><input type='button' value='CNV' name='$line[0]' onclick = \"location='/odi/prueba2.php?id=$line[0]'\"/></td>";
+    echo "<td><input type='button' value='Cerrar ODI' name='$line[0]' onclick = \"location='/odi/cerrar.php?id=$line[0]'\"/></td>";
     echo "</tr>";
 
 }
