@@ -18,3 +18,9 @@ body{
       page-break-before:always;
    }
 }
+.im{
+    width: 180px; height: 60px;
+    position: absolute;
+  top:  15px; 
+  left: 35px;
+}

@@ -24,11 +24,22 @@
 });
 
 </script>
+<?php 
+session_start();
+if($_SESSION['tipo'] == ""){
+  header('location:index.html');
+  }
+$listo = $_GET['Li'];
+if($listo == '1'){
+echo"<script type='text/javascript'>
+	alert('Cliente Agregado');
+</script>";}?>
+
 <div class="re">
 
 <form name"insta" method="get" action="accion.php">
 	<table>
-		<tr><th colspan="2">Captura de Nueva ODI</th></tr>
+		<tr><th colspan="2">Generar Nueva ODI</th></tr>
 		<tr>
 			<td>Nombre del cliente</td>
 			<td><input type="text" name="nombre" size="35"></td>
@@ -79,7 +90,7 @@
 $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
 echo "<tr><td>Compartir con: </td><td><select id='comp' name ='comp'><option value''></option>";
 while ($line = mysql_fetch_array($result, MYSQL_NUM)) {
-		echo "<option value='$line[1]'>$line[2]</option>";
+		echo "<option value='$line[0]'>$line[2]</option>";
   		 } echo "</td></tr>";?>
   		<tr>
 			<td>Pago/Adelanto</td>
@@ -91,7 +102,7 @@ while ($line = mysql_fetch_array($result, MYSQL_NUM)) {
   		</tr>
   		<tr>
 			<td>Identificación oficial</td>
-			<td><input name"identi" accept="image/*"  type="file" capture/></td>
+			<td><input name="identi" accept="image/*"  type="file" capture/></td>
   		</tr>
   		
   		<tr><td align="center" colspan="2"><input class="but" width="100%" type="submit" name=""></td></tr>

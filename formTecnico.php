@@ -10,6 +10,10 @@
 <center><header>Listado de Instalaciones Pendientes</header></center>
 <div class="datagrid">
 <?php
+session_start();
+if($_SESSION['tipo'] == 'venta' || $_SESSION['tipo'] == ""){
+  header('location:index.html');
+  }
 include('conexion.php');
 $query = 'SELECT * FROM clientes WHERE Revisado="0"';
 $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
@@ -53,7 +57,7 @@ while ($line = mysql_fetch_array($result, MYSQL_NUM)) {
   }else{
   	echo "<td></td>";
   }
-  	echo "<td>$line[13]</td>";
+  	echo "<td>$line[18]</td>";
     echo "<td><input type='button' value='ODI' name='$line[0]' onclick = \"location='/odi/accionTec.php?id=$line[0]'\"/></td>";
     echo "<td><input type='button' value='CNV' name='$line[0]' onclick = \"location='/odi/prueba2.php?id=$line[0]'\"/></td>";
     echo "<td><input type='button' value='Cerrar ODI' name='$line[0]' onclick = \"location='/odi/cerrar.php?id=$line[0]'\"/></td>";

@@ -12,12 +12,16 @@ while ($line = mysql_fetch_array($result, MYSQL_NUM)) {
 		if ($line[2]==$pass) {
 			$passbool=true;
 			if($line[4]=="tecnico"){
+				$_SESSION['id']=$line[0];
 				$_SESSION['user']=$line[3];
+				$_SESSION['tipo']=$line[4];
 				header('Location: formTecnico.php');
 				break;
 			}else{
+				$_SESSION['id']=$line[0];
 				$_SESSION['user']=$line[3];
-				header('Location: formVentas.php');
+				$_SESSION['tipo']=$line[4];
+				header('Location: formVentas.php?Li=0');
 				break;
 			}
 		}else{

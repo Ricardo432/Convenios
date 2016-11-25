@@ -22,6 +22,9 @@
 include('conexion.php');
 
 session_start();
+if($_SESSION['tipo'] == 'venta' || $_SESSION['tipo'] == ""){
+  header('location:index.html');
+}
 $id_cliente = $_GET['id'];
 
 $query = "SELECT * FROM clientes WHERE Id_cliente='$id_cliente'";
