@@ -7,6 +7,7 @@
 </head>
 <body>
 <?php 
+include('menu.html');
 session_start();
 if($_SESSION['tipo'] == 'venta' || $_SESSION['tipo'] == ""){
   header('location:index.html');
@@ -27,8 +28,16 @@ echo "<form method='post' action='cerrarAc.php?id=$idcliente'>";
 	<option value="Avicola">Avicola</option>
 	</select></td></tr>
 	<tr><td>IP del Radio</td><td><input type="text" name="radio"></td></tr>
-	<tr><td>IP del MikroTik</td><td><input type="text" name="mikrotik"></td></tr>
+	<tr><td>Tipo de Router</td><td><select name="tipoRo">
+	<option value="TP-Link">TP-Link</option>
+	<option value="MikroTik">Mikrotik</option>
+	</select></td></tr>
+	<tr><td>IP del Router</td><td><input type="text" name="mikrotik"></td></tr>
 	<tr><td>Cliente Nodo Antena Compartida</td><td><input type="checkbox" name="nodo" value="1"></td></tr>
+	<tr>
+			<td>Comentarios</td>
+			<td><textarea name="comentarios" cols='33' rows='3'></textarea></td>
+  		</tr>
 	<tr><td><input class="but" type="submit" name="Enviar" ></td></tr>
 </table>
 </div>

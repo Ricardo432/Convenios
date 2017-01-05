@@ -1,6 +1,6 @@
 <?php
 session_start();
-$usuario = $_SESSION['id'];
+$usuario = $_SESSION['ide'];
 if( $_SESSION['tipo'] == ""){
   header('location:index.html');
   }
@@ -20,10 +20,11 @@ $comentarios = $_GET['comentarios'];
 echo $comparte;
 $referencia = $_GET['ref'];
 $iden = $_GET['identi'];
+echo $_SESSION['user'];
 $query ="INSERT INTO clientes (Nombre, Direccion, Telefono, Email, Zona, Tipo_Instalacion, TIpo_paquete, Identificacion, Pago, Fecha_Solicitud,ComparteCon, Comentarios, Referencia, Revisado, UserReg)  VALUES('$nombre','$direccion','$telefono','$email','$zona','$tipoIns','$paq','','$pago','20$fecha','$comparte','$comentarios','$referencia','0','$usuario')";
 echo $query;
-//mysql_query($query) or die('Consulta fallida: ' . mysql_error());
-//header('Location: formVentas.php?Li=1');
+mysql_query($query) or die('Consulta fallida: ' . mysql_error());
+header('Location: formVentas.php?Li=1');
 
 $mensaje ="Instalacion nueva";
 

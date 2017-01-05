@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=0.6, maximum-scale=2">
-<link rel="stylesheet" type="text/css" href="css/table.css">
+<meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=2">
+<link rel="stylesheet" type="text/css" href="css/table2.css">
 	<title></title>
 </head>
 <body>
@@ -10,6 +10,7 @@
 <center><header>Listado de Instalaciones Pendientes</header></center>
 <div class="datagrid">
 <?php
+include('menu.html');
 session_start();
 if($_SESSION['tipo'] == 'venta' || $_SESSION['tipo'] == ""){
   header('location:index.html');
@@ -47,7 +48,7 @@ while ($line = mysql_fetch_array($result, MYSQL_NUM)) {
     echo "<td>$line[8]</td>";
     echo "<td>$line[10]</td>";
     echo "<td>$line[11]</td>";
-  if($line[12]!=""){
+  if($line[12]!="0"){
   	$query2 = "SELECT * FROM clientes WHERE Id_cliente=$line[12]";
   	$result2 = mysql_query($query2) or die('Consulta fallida: ' . mysql_error());
   	while ($li = mysql_fetch_array($result2, MYSQL_NUM)) {
@@ -59,7 +60,7 @@ while ($line = mysql_fetch_array($result, MYSQL_NUM)) {
   }
   	echo "<td>$line[18]</td>";
     echo "<td><input type='button' value='ODI' name='$line[0]' onclick = \"location='/odi/accionTec.php?id=$line[0]'\"/></td>";
-    echo "<td><input type='button' value='CNV' name='$line[0]' onclick = \"location='/odi/prueba2.php?id=$line[0]'\"/></td>";
+    echo "<td><input type='button' value='CNV' name='$line[0]' onclick = \"location='/odi/convenio.php?id=$line[0]'\"/></td>";
     echo "<td><input type='button' value='Cerrar ODI' name='$line[0]' onclick = \"location='/odi/cerrar.php?id=$line[0]'\"/></td>";
     echo "</tr>";
 
@@ -73,7 +74,7 @@ mysql_free_result($result);
 // Cerrar la conexión
 mysql_close($link);
 ?>
-
+<input type='button' value='Consultar clientes para alta' name='$line[0]' onclick = "location='/odi/Consulta.php'"/>
 </div>
 </body>
 </html>

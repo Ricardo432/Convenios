@@ -1,0 +1,33 @@
+.datagrid table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ddd;
+	font-family: Calibri ;
+	font-size: 12px;
+}
+
+.datagrid th, td {
+    border: 1;
+    text-align: left;
+    padding: 5px;
+}
+
+.datagrid tr:nth-child(even){background-color: #f2f2f2}
+p{
+	font-family: Calibri ;
+	font-size: 12px;
+}
+.rt table {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ddd;
+    font-family: Calibri ;
+    font-size: 12px;
+}
+.rt th, td {
+    border: 1;
+    text-align: left;
+    padding: 5px;
+}
