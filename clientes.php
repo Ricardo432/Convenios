@@ -40,6 +40,8 @@ echo "<tr>";
    <th >IP Router</th>
    <th >Nodo Raiz</th>
    <th >Fecha de Instalacion</th>
+   <th >Comentario Ventas</th>
+   <th >Comentario Instalacion</th>
    <td><form id="buscador" name="buscador" method="post" action="clientes.php?bus=1"> 
     <input id="buscar" name="buscar" type="search" placeholder="Buscar cliente..." autofocus >
     <input type="submit" name="buscador" class="boton peque aceptar" value="buscar">
@@ -73,6 +75,8 @@ while ($line = mysql_fetch_array($result, MYSQL_NUM)) {
     echo "<td>$line[15]</td>";
     echo "<td>$line[17]</td>";
     echo "<td>$line[21]</td>";
+    echo "<td>$line[18]</td>";
+    echo "<td>$line[24]</td>";
 
 }
 echo "</tbody>";
