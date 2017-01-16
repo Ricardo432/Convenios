@@ -97,6 +97,10 @@ while ($line = mysql_fetch_array($result, MYSQL_NUM)) {
 			<td><input type="text" name="pago"></td>
   		</tr>
   		<tr>
+			<td>Fecha posible de Instalación</td>
+			<td><input type="date" name="fecha"></td>
+  		</tr>
+  		<tr>
 			<td>Comentarios</td>
 			<td><textarea name="comentarios" cols='33' rows='3'></textarea></td>
   		</tr>
