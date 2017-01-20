@@ -48,10 +48,7 @@ echo"<script type='text/javascript'>
 			<td>Dirección</td>
 			<td><textarea name="direccion" cols='33' rows='2'></textarea></td>
   		</tr>
-  		<tr>
-			<td>Referencia</td>
-			<td><textarea name="ref" cols='33' rows='2'></textarea></td>
-  		</tr>
+  		
   		<tr>
 			<td>Correo Electronico</td>
 			<td><input type="email" name="email" size="35"></td>
@@ -97,12 +94,32 @@ while ($line = mysql_fetch_array($result, MYSQL_NUM)) {
 			<td><input type="text" name="pago"></td>
   		</tr>
   		<tr>
+			<td>Referencia 1</td>
+			<td><textarea name="ref" cols='33' rows='2'></textarea></td>
+  		</tr>
+  		<tr>
+			<td>Telefono </td>
+			<td><textarea name="telref" cols='33' rows='2'></textarea></td>
+  		</tr>
+  		<tr>
+			<td>Referencia 2</td>
+			<td><textarea name="ref2" cols='33' rows='2'></textarea></td>
+  		</tr>
+  		<tr>
+			<td>Telefono </td>
+			<td><textarea name="telref2" cols='33' rows='2'></textarea></td>
+  		</tr>
+  		<tr>
 			<td>Fecha posible de Instalación</td>
 			<td><input type="date" name="fecha"></td>
   		</tr>
   		<tr>
 			<td>Comentarios</td>
 			<td><textarea name="comentarios" cols='33' rows='3'></textarea></td>
+  		</tr>
+  		<tr>
+			<td>Vendedor</td>
+			<td><textarea name="vendedor" cols='33' rows='2'></textarea></td>
   		</tr>
   		<tr>
 			<td>Identificación oficial</td>

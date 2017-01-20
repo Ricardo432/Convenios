@@ -33,6 +33,7 @@ echo "<tr>";
     echo "<th>F/Solicitud</th>";
     echo "<th >Comparte con:</th>";
     echo "<th >Comentarios</th>";
+    echo "<th >Fecha Posible de Instalacion</th>";
     echo "<th colspan='3'></th>";
     echo "</tr></thead>";
     echo "<tbody>";
@@ -59,6 +60,7 @@ while ($line = mysql_fetch_array($result, MYSQL_NUM)) {
   	echo "<td></td>";
   }
   	echo "<td>$line[18]</td>";
+     echo "<td>$line[31]</td>";
     echo "<td><input type='button' value='ODI' name='$line[0]' onclick = \"location='/odi/accionTec.php?id=$line[0]'\"/></td>";
     echo "<td><input type='button' value='CNV' name='$line[0]' onclick = \"location='/odi/convenio.php?id=$line[0]'\"/></td>";
     echo "<td><input type='button' value='Cerrar ODI' name='$line[0]' onclick = \"location='/odi/cerrar.php?id=$line[0]'\"/></td>";

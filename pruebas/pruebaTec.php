@@ -17,7 +17,7 @@ if($_SESSION['tipo'] == 'venta' || $_SESSION['tipo'] == ""){
 include('conexion.php');
 $query = 'SELECT * FROM Cliente_VC WHERE Revisado="0"';
 $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
-// Imprimir los resultados en HTML
+
 echo "<table  border='1'>";
 echo "<tr>";
     echo "<thead><th>Cliente</th>";
@@ -26,11 +26,12 @@ echo "<tr>";
     echo "<th>Telefono</th>";
     echo "<th>E-mail</th>";
     echo "<th>Zona</th>";
-    echo "<th>Tipo de Instalacion</th>";
+    echo "<th>Tipo de Instalación</th>";
     echo "<th>Paquete</th>";
     echo "<th>Pago</th>";
     echo "<th>F/Solicitud</th>";
     echo "<th >Comentarios</th>";
+    echo "<th >Fecha Probable de Instalación</th>";
     echo "<th >Comparte con</th>";
     echo "<th colspan='3'></th>";
     echo "</tr></thead>";
@@ -53,6 +54,7 @@ $query3 = "SELECT * FROM Cliente WHERE Id_cliente=$line[0]";
     echo "<td>$line[5]</td>";
     echo "<td>$line[6]</td>";
     echo "<td>$line[13]</td>";
+    echo "<td>$line[20]</td>";
   if($line[7]!="0"){
   	$query2 = "SELECT * FROM Cliente WHERE Id_cliente=$line[7]";
   	$result2 = mysql_query($query2) or die('Consulta fallida: ' . mysql_error());
