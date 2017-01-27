@@ -20,7 +20,6 @@
    <th >Comparte con:</th>
    <th >Sectorial</th>
    <th >IP Radio</th>
-   <th >Tipo de Router</th>
    <th >IP Router</th>
    <th >Nodo Raiz</th>
    <th >Fecha de Instalacion</th>
@@ -41,7 +40,6 @@ if($_SESSION['tipo'] == 'venta' || $_SESSION['tipo'] == ""){
 include('conexion.php');
 if($_GET['bus']==0){
 $query = 'SELECT * FROM Cliente_VC WHERE (Revisado="1" AND Alta="1"  )ORDER BY Fecha_Instalacion DESC' ;
-}
 
 $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
 // Imprimir los resultados en HTML
@@ -83,6 +81,7 @@ $query3 = "SELECT * FROM Cliente WHERE Id_cliente=$line[0]";
 }
 echo "</tbody>";
 echo "</table>";
+}
 else{
 $busc = $_POST['buscar'];
 $query = "SELECT * FROM Cliente WHERE (Nombre LIKE  '%" .$busc. "%' ) " ;
@@ -91,9 +90,40 @@ $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
 
 
 while ($line = mysql_fetch_array($result, MYSQL_NUM)) {
-  $query2 = 'SELECT * FROM Cliente_VC WHERE (Revisado="1" AND Alta="1"  AND Id_ClienteVC=".$")' ;
-$result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
+  echo "<tr>";
+  $query2 = 'SELECT * FROM Cliente_VC WHERE (Revisado="1" AND Alta="1"  AND Id_ClienteVC="'.$line[0].'")' ;
+$result2 = mysql_query($query2) or die('Consulta fallida: ' . mysql_error());
+while ($line2 = mysql_fetch_array($result2, MYSQL_NUM)) {
+    echo "<td>$line[1]</td>";
+    echo "<td>$line[2]</td>";
+    echo "<td>$line[4]</td>";
+    echo "<td>$line[5]</td>";
+    echo "<td>$line2[1]</td>";
+    echo "<td>$line2[2]</td>";
+    echo "<td>$line2[3]</td>";
+    if($line2[7]!="0"){
+    $query3 = "SELECT * FROM Cliente WHERE Id_cliente=$line[7]";
+    $result3 = mysql_query($query3) or die('Consulta fallida: ' . mysql_error());
+    while ($li = mysql_fetch_array($result3, MYSQL_NUM)) {
+      echo "<td>$li[1]: $li[2]</td>";
+    }
+  }else{
+    echo "<td></td>";
+  }
+    echo "<td>$line2[8]</td>";
+    echo "<td>$line2[9]</td>";
+    echo "<td>$line2[10]</td>";
+    echo "<td>$line2[12]</td>";
+    echo "<td>$line2[16]</td>";
+    echo "<td>$line2[13]</td>";
+    echo "<td>$line2[19]</td>";
+    echo "<td>$line2[26]</td>";
 }
+echo "</tr>";
+echo "</tbody>";
+echo "</table>";
+}
+
 }
 
 // Liberar resultados
