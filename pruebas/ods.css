@@ -8,6 +8,13 @@
   font-size: 14px;
 position: absolute;
     top: 8px;
+    right: 100px;
+}
+.datosItk2{
+  font-family: Arial;
+  font-size: 14px;
+position: absolute;
+    top: 8px;
     right: 16px;
 }
 body{

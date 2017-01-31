@@ -20,7 +20,17 @@ if( $_SESSION['tipo'] == ""){
     <link rel="stylesheet" type="text/css" href="ods.css">
     	<title>Orden de Servicio</title>
     </head>
-    <body>
+   </head>
+  <body onload="imprimir();">
+  <script type="text/javascript">
+            function imprimir() {
+                if (window.print) {
+                    window.print();
+                } else {
+                    alert("La función de impresion no esta soportada por su navegador.");
+                }
+            }
+        </script>
     
     <img  class ="im" src="img/logointekra.jpg">
     <div class="datosItk">
@@ -29,9 +39,9 @@ if( $_SESSION['tipo'] == ""){
     	Villahermosa, Tab. <br>
     	C.P. 86100
     </div>
-    <div class="datosItk">
+    <div class="datosItk2">
     	ODT<br>
-    	
+    	N°
     </div>
         <br>
     </body>
