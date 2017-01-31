@@ -1,0 +1,22 @@
+.datosC{
+	font-family: Arial ;
+	font-size: 14px;
+
+}
+.datosItk{
+  font-family: Calibri;
+  font-size: 14px;
+position: absolute;
+    top: 8px;
+    right: 16px;
+}
+body{
+	text-align: justify;
+}
+
+.im{
+    width: 210px; height: 110px;
+    position: absolute;
+  top:  15px; 
+  left: 35px;
+}

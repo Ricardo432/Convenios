@@ -41,6 +41,7 @@ include('conexion.php');
 if($_GET['bus']==0){
 $query = 'SELECT * FROM Cliente_VC WHERE (Revisado="1" AND Alta="1"  )ORDER BY Fecha_Instalacion DESC' ;
 
+echo $query;
 $result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
 // Imprimir los resultados en HTML
 
@@ -50,6 +51,7 @@ while ($line = mysql_fetch_array($result, MYSQL_NUM)) {
     echo "<tr>";
 $query3 = "SELECT * FROM Cliente WHERE Id_cliente=$line[0]";
     $result3 = mysql_query($query3) or die('Consulta fallida: ' . mysql_error());
+    echo $query3;
     while ($li2 = mysql_fetch_array($result3, MYSQL_NUM)) {
     echo "<td>$li2[1]</td>";
     echo "<td>$li2[2]</td>";
